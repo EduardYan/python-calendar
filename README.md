@@ -2,7 +2,7 @@
 
 __See a small calendar with the current date from the terminal.__
 
-__This program not requires depencies, only python3 installed.__
+__This program not have dependencies, only python3 installed.__
 
 ## Run.
 ```bash
