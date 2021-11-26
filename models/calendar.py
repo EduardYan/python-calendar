@@ -6,7 +6,7 @@ for create a calendar object.
 import sys
 sys.path.append('.')
 
-from data.days import DAYS
+from data.days import DAYS, DAYS_LIST
 
 
 class Calendar:
@@ -54,6 +54,7 @@ class Calendar:
         if self.month == 'December':
             return DAYS[11]
 
+
     def show_calendar(self):
         """
         Show the current calendar.
@@ -76,13 +77,30 @@ class Calendar:
 
         # getting the days and show it with tabs
         self.days = self.validate_month()
-        for day in self.days:
-            if int(day) == self.day:
-                print( '\t\t' + f'{day} <== Current Day' )
+        # for number_day in self.days:
+            # if int(number_day) == self.day:
+                # print( '\t\t' + f'{number_day} <== Current Day' )
+
+            # else:
+                # print( '\t\t' + number_day, end = '' )
+                # print( '\t\t' + '-----' )
+
+        for idx, number_day in enumerate(self.days):
+            if int(number_day) == self.day:
+                try:
+                    print( '\t\t' + DAYS_LIST[idx] + f'{number_day} <== Current Day' )
+                except IndexError:
+                    print( '\t\t' + DAYS_LIST[idx - int(number_day)] + f'{number_day} <== Current Day' )
+                    print( '\t\t' + '-----' )
 
             else:
-                print( '\t\t' + day, end = '' )
-                print( '\t\t' + '-----' )
+                try:
+                    print( '\t\t' + DAYS_LIST[idx] + number_day, end = '' )
+                    print( '\t\t' + '-----' )
+
+                except IndexError:
+                    print( '\t\t' + DAYS_LIST[idx - int(number_day) - 1] + number_day, end = '' )
+                    print( '\t\t' + '-----' )
 
     def __str__(self):
         return self.calendar

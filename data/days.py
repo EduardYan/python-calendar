@@ -3,6 +3,7 @@ This module have the days of the month
 for show it.
 """
 
+# days for use
 JANUARY_DAYS = [str(d) for d in range(1, 32)]
 FEBRUARY_DAYS = [str(d) for d in range(1, 30)]
 MARCH_DAYS = [str(d) for d in range(1, 32)]
@@ -29,6 +30,16 @@ DAYS = (
     OCTOBER_DAYS,
     NOVEMBER_DAYS,
     DECEMBER_DAYS
+)
+
+DAYS_LIST = (
+    'Sunday',
+    'Monday',
+    'Tuesday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday'
 )
 
 if __name__ == '__main__':
