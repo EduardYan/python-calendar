@@ -16,4 +16,4 @@ $ python3 -m main
 ```
 
 ## Screenshot.
-![]('./doc/screenshot.png')
+![](./doc/screenshot.png)
